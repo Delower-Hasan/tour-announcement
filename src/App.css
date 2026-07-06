@@ -1,0 +1,387 @@
+.banner {
+  background-image: url("./assets/banner2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  min-width: 320px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-position: center;
+  padding: 20px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.55) 0%,
+    rgba(0, 0, 0, 0.3) 50%,
+    rgba(0, 0, 0, 0.55) 100%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.banner > * {
+  position: relative;
+  z-index: 1;
+}
+
+.logo-img {
+  /* width: 140px;
+  height: 40px; */
+  margin: 0 auto !important;
+  text-align: center;
+}
+
+.text {
+  font-family: "Abril Fatface", serif;
+  text-align: center;
+  font-size: 60px;
+  font-style: normal;
+  line-height: 1.2;
+  margin: 10px 0 20px;
+}
+
+.bangla {
+  font-family: "Nunito", sans-serif;
+  text-align: center;
+  font-size: 36px;
+  font-style: normal;
+  line-height: normal;
+  margin-top: 20px;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 15px;
+  color: rgba(242, 242, 242, 0.75);
+  font-family: "Nunito", sans-serif;
+  margin: 0 0 4px;
+  letter-spacing: 0.8px;
+}
+
+.vibes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 22px;
+}
+
+.vibe-chip {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 50px;
+  padding: 6px 18px;
+  font-size: 14px;
+  color: #ffffff;
+  font-family: "Nunito", sans-serif;
+  white-space: nowrap;
+  letter-spacing: 0.3px;
+}
+
+.timerContainer {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.timerNumber {
+  margin: 0;
+  color: #f2f2f2;
+  font-size: 100px;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: -2px;
+  border-radius: 20px;
+  background-color: #ffffff28;
+  width: 140px;
+  height: 140px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.timerLabel {
+  text-align: center;
+  font-size: 20px;
+  font-style: normal;
+  line-height: 1;
+  margin-top: 10px;
+}
+
+@media only screen and (min-width: 689px) and (max-width: 992px) {
+  .text {
+    font-size: 48px;
+  }
+
+  .bangla {
+    font-size: 28px;
+  }
+
+  .timerNumber {
+    font-size: 80px;
+    width: 100px;
+    height: 100px;
+  }
+
+  .timerLabel {
+    font-size: 16px;
+  }
+}
+
+@media only screen and (max-width: 688px) {
+  .text {
+    font-size: 36px;
+  }
+
+  .bangla {
+    font-size: 20px;
+  }
+
+  .timerNumber {
+    font-size: 50px;
+    width: 80px;
+    height: 80px;
+  }
+
+  .timerLabel {
+    font-size: 12px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .banner {
+    padding: 10px;
+  }
+
+  .text {
+    font-size: 28px;
+  }
+
+  .bangla {
+    font-size: 18px;
+  }
+
+  .timerContainer {
+    gap: 10px;
+  }
+
+  .timerNumber {
+    font-size: 40px;
+    width: 60px;
+    height: 60px;
+  }
+
+  .timerLabel {
+    font-size: 10px;
+  }
+}
+/* Participants Marquee Panel */
+.main-content {
+  padding-right: 180px;
+}
+
+.participants-panel {
+  position: fixed;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 150px;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 18px;
+  padding: 14px 10px;
+  z-index: 10;
+}
+
+.participants-label {
+  text-align: center;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: #f2f2f2cc;
+  margin: 0 0 12px 0;
+  font-weight: 700;
+  font-family: "Nunito", sans-serif;
+}
+
+.marquee-wrapper {
+  overflow: hidden;
+  height: 260px;
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 15%,
+    black 85%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 15%,
+    black 85%,
+    transparent 100%
+  );
+}
+
+.marquee-track {
+  display: flex;
+  flex-direction: column;
+  animation: scrollUp 12s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+.participant-name {
+  padding: 7px 4px;
+  text-align: center;
+  color: #ffffff;
+  font-size: 14px;
+  font-family: "Nunito", sans-serif;
+  white-space: nowrap;
+  margin: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.participant-name:last-child {
+  border-bottom: none;
+}
+
+@keyframes scrollUp {
+  0%   { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
+}
+
+@keyframes scrollLeft {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Tablet: shrink the panel, reduce content padding */
+@media only screen and (min-width: 689px) and (max-width: 992px) {
+  .main-content {
+    padding-right: 140px;
+  }
+
+  .participants-panel {
+    width: 120px;
+    right: 16px;
+  }
+
+  .marquee-wrapper {
+    height: 220px;
+  }
+
+  .participant-name {
+    font-size: 12px;
+    padding: 6px 4px;
+  }
+}
+
+/* Mobile: switch to horizontal bottom strip */
+@media only screen and (max-width: 688px) {
+  .main-content {
+    padding-right: 0;
+    padding-bottom: 64px;
+  }
+
+  .participants-panel {
+    width: 100%;
+    right: 0;
+    left: 0;
+    top: auto;
+    bottom: 0;
+    transform: none;
+    border-radius: 14px 14px 0 0;
+    padding: 10px 0 12px;
+  }
+
+  .participants-label {
+    margin-bottom: 8px;
+  }
+
+  .marquee-wrapper {
+    height: auto;
+    mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 8%,
+      black 92%,
+      transparent 100%
+    );
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 8%,
+      black 92%,
+      transparent 100%
+    );
+  }
+
+  .marquee-track {
+    flex-direction: row;
+    animation: scrollLeft 14s linear infinite;
+    width: max-content;
+  }
+
+  .participant-name {
+    padding: 4px 16px;
+    border-bottom: none;
+    border-right: 1px solid rgba(255, 255, 255, 0.15);
+    font-size: 13px;
+  }
+
+  .participant-name:last-child {
+    border-right: none;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .banner {
+    padding: 10px;
+    flex-direction: column;
+  }
+
+  .text {
+    font-size: 24px;
+    line-height: 1.2;
+  }
+
+  .bangla {
+    font-size: 16px;
+    margin-top: 15px;
+  }
+
+  .timerContainer {
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .timerNumber {
+    font-size: 36px;
+    width: 55px;
+    height: 55px;
+    border-radius: 8px;
+  }
+
+  .timerLabel {
+    font-size: 10px;
+    margin-top: 5px;
+  }
+}
