@@ -103,7 +103,7 @@ function App() {
       <ParticipantsMarquee />
       <div className="main-content">
         <h1 className="text">{`Tour De Bhawal`}</h1>
-        <p className="subtitle">📍 Bhawal National Park &nbsp;•&nbsp; July 10, 2026 &nbsp;•&nbsp; 11:00 AM</p>
+        <p className="subtitle">📍 Grand Bhawal Resort &nbsp;•&nbsp; July 10, 2026 &nbsp;•&nbsp; 11:00 AM</p>
         <div className="timerContainer">
           <div className="timeSection">
             <p className="timerNumber">{days}</p>
